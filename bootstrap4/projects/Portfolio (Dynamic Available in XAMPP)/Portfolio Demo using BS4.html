@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Just Me Again Down Here' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+<link rel="icon" href="https://images.vexels.com/media/users/3/140800/isolated/preview/86b482aaf1fec78a3c9c86b242c6ada8-man-profile-avatar-by-vexels.png">
+
+    <title>Portfolio</title>
+    <style>
+        a {
+            color: white;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        p,li {
+            color: #818181;
+            font-family: 'Just Me Again Down Here';
+            font-size: 25px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h2,h5 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 10vh;
+            width: fit-content;
+            margin: auto;
+            transition: 1s;
+            border-bottom: 2px solid transparent;
+            cursor: default;
+            font-family: 'Kaushan Script';
+        }
+
+        h2:hover {
+            border-bottom: 2px solid gainsboro;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        .progress{
+            font-family: 'Just Me Again Down Here';
+        }
+        .sidenav a {
+            font-family: 'Just Me Again Down Here';
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 40px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+
+        .main {
+            margin-left: 160px;
+            overflow: hidden;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .col-4 img {
+            width: 100%;
+        }
+
+        .col-4 {
+            padding: 5%;
+        }
+
+        .col-4:hover {
+            opacity: .7;
+            cursor: pointer;
+            transition: .5s;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        #footer {
+            overflow: hidden;
+            background-color: #111;
+            color: #818181;
+        }
+        #footer li:hover{
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="sidenav" data-aos="fade-right">
+        <a href="#about">About</a>
+        <a href="#project">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#location">Contact</a>
+        <a href="#footer">Footer</a>
+    </div>
+    <div class="main text-center" id="about">
+        <div class="m-5" data-aos="zoom-in">
+            <img class="w-30 mx-auto d-block rounded-circle m-5"
+                src="https://i.pinimg.com/236x/be/b0/2b/beb02bba2917aacaf0a26a3071c409de.jpg" alt=""
+                style="filter: grayscale(100%);">
+            <h2>Mir Labib Hossain</h2>
+            <p class="m-3 mb-5">Hello ! i am Labib, a web developer based in Dhaka, Bangladesh. Lorem ipsum dolor sit
+                amet
+                consectetur adipisicing elit. Delectus natus rerum neque est eveniet, magni, accusamus dolor
+                consectetur vel possimus eaque, consequatur quia enim ducimus. Hic id aspernatur eveniet quasi?</p>
+        </div>
+        <div id="project" class="pt-5">
+            <h2 data-aos="fade-up">Projects</h2>
+            <div class="row mx-auto">
+                <div class="col-4" data-aos="fade-right"><img src="https://i.pinimg.com/564x/2b/c2/ac/2bc2ac424c62cdc482190431517412dc.jpg"
+                        alt=""></div>
+                <div class="col-4" data-aos="fade-down"><img src="https://i.pinimg.com/236x/b3/b1/f6/b3b1f6ff7e0c68a9c480b70d9a5631eb.jpg"
+                        alt=""></div>
+                <div class="col-4" data-aos="fade-left"><img src="https://i.pinimg.com/236x/5d/b2/6a/5db26a358ff26c87e830f740df743643.jpg"
+                        alt=""></div>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-4" data-aos="fade-right"><img src="https://i.pinimg.com/236x/c4/e1/a5/c4e1a58ce5f7e3f8eeeb2b6637045cc3.jpg"
+                        alt=""></div>
+                <div class="col-4" data-aos="fade-up"><img src="https://i.pinimg.com/236x/59/85/6d/59856d1affbaa6278bfcad633c0cd0db.jpg"
+                        alt=""></div>
+                <div class="col-4" data-aos="fade-left"><img src="https://i.pinimg.com/236x/91/de/a6/91dea65e8963550c9fb2e391b2a48b03.jpg"
+                        alt=""></div>
+            </div>
+        </div>
+        <div class="text-left p-5" id="skills" data-aos="zoom-in">
+            <h2 class="text-center"  data-aos="fade-up">Skills</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>JAVA</p>
+                    <div class="progress border"  data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 92%;">92%</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>C</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 94%;">94%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>HTML</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 70%;">70%</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>CSS</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 85%;">85%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>JavaScript</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 80%;">80%</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>JQuery</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 88%;">88%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>MySQL</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 70%;">70%</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>bootstrap</p>
+                    <div class="progress" data-aos="fade-left">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                            style="width: 86%;">86%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="problem">
+            <h2 data-aos="fade-up">Problems solved</h2>
+            <div class="d-flex justify-content-around m-5" data-aos="zoom-in">
+                <div>
+                    <p>URI <span class="badge badge-dark">220</span> </p>
+                </div>
+                <div>
+                    <p>HackerRank <span class="badge badge-dark">125</span> </p>
+                </div>
+                <div>
+                    <p>CodeChef <span class="badge badge-dark">30</span> </p>
+                </div>
+                <div>
+                    <p>CodeMarshal <span class="badge badge-dark">32</span> </p>
+                </div>
+            </div>
+        </div>
+        <div id="goal" class="p-5 m-5">
+            <h2 data-aos="fade-up">Goal</h2>
+            <p  data-aos="zoom-in">Efficiency, Puntuality, Readbility Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod
+                veritatis culpa eaque quaerat tempora aliquam nobis optio, iusto fugit blanditiis. Ab veritatis nobis
+                magnam illum impedit eligendi eum velit doloribus!</p>
+        </div>
+        <div id="location" class="m-5 pb-5">
+            <h2 class="m-5 mx-auto" data-aos="fade-up">Find Me</h2>
+            <div class="row">
+                <div class="col-sm-4 m-5 mx-auto" data-aos="fade-right">
+                    <h5>Location</h5>
+                    <ul class="list-group">
+                        <li>House 10</li>
+                        <li>Road 21</li>
+                        <li>Mirpur 11</li>
+                        <li>Dhaka Bangladesh</li>
+                        <hr>
+                        <li>Mob - 01670820474</li>
+                    </ul>
+                </div>
+                <div class="col-sm-8 mx-auto" data-aos="fade-left"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.73467103067!2d90.3618152142985!3d23.828032291724707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c13a21730b43%3A0xb14a9c52d01c00d9!2sMirpur-12%20Bus%20Stand!5e0!3m2!1sen!2sbd!4v1604167562092!5m2!1sen!2sbd"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe></div>
+            </div>
+        </div>
+
+        <div id="footer" class="p-5 mt-5">
+            <div class="row">
+                <div class="col" data-aos="fade-up" id="contact">
+                    <ul class="list-group">
+                        <li><h1>Contact</h1></li>
+                        <li><i class='fab text-primary'>&#xf09a; </i> Facebook</li>
+                        <li><i class='fab text-info'>&#xf099; </i> Twitterr</li>
+                        <li><i class='fab text-success'>&#xf232; </i> Facebook</li>
+                    </ul>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="300" id="location">
+                    <ul class="list-group">
+                        <li><h1>Location</h1></li>
+                        <li>House 10</li>
+                        <li>Road 21</li>
+                        <li>Mirpur 11</li>
+                        <li>Dhaka Bangladesh</li>
+                    </ul>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="600" id="resource">
+                    <ul class="list-group">
+                        <li><h1>Features</h1></li>
+                        <li>w3schools</li>
+                        <li>StackOverFlow</li>
+                        <li>FreeFrontEnd</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    AOS.init({
+        duration: 1200,
+    });
+</script>
+
+</html>
