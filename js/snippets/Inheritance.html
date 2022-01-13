@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>  
+    <body>
+        <div id='test'></div>
+        <script>
+            class c1{
+                constructor(name, id){
+                    this.stdName=name;
+                    this.stdId=id;
+                }
+                ans(){
+                    return this.stdName+" 's id is "+this.stdId+".";
+                }
+            }
+            class c2 extends c1{
+                constructor(name, id, hobby)
+                {
+                    super(name, id);
+                    this.stdHobby=hobby;
+                }
+                show(){
+                    return this.ans()+ " and his hobby is "+this.stdHobby;
+                }
+            }
+            ref = new c2('mir labib hosssain', 11183007, 'cooding');
+            document.getElementById('test').innerHTML=ref.show();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  </style>
+  <body>
+  <button id="demo2">Click</button>
+  <p id="demo"></p>
+  <script>
+  document.getElementById("demo2").addEventListener("mouseover",fu);
+  document.getElementById("demo2").addEventListener("click",fu2);
+  document.getElementById("demo2").addEventListener("mouseout",fu3);
+
+  function fu(){
+    document.getElementById("demo").innerHTML+="Over <br>"
+  }
+  function fu2(){
+    document.getElementById("demo").innerHTML+="Clicked<br>"
+  }
+  function fu3(){
+    document.getElementById("demo").innerHTML+="Out<br>"
+  }
+  </script>
+  </body>
+</html>

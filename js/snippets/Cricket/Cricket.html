@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: 'Anton';
+        font-style: italic;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5)), url("https://www.setaswall.com/wp-content/uploads/2018/07/Cricket-Wallpaper-23-1182x888.jpg");
+        background-position: center;
+        background-size: cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bg,
+    .end {
+        display: none;
+        width: 80%;
+
+    }
+
+    .row {
+        margin: 60px auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .row span {
+        position: relative;
+        display: inline-block;
+        margin: 30px 10px;
+    }
+
+
+    .inp {
+        display: inline-block;
+        width: 215px;
+        padding: 10px 0 10px 15px;
+        font-weight: 400;
+        color: #377d6a;
+        background: #efefef;
+        border: 0;
+        border-radius: 3px;
+        outline: 0;
+        text-indent: 60px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .inp::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 0;
+        font-weight: 300;
+    }
+
+    .inp+label {
+        display: inline-block;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        bottom: 8px;
+        padding: 5px 15px;
+        color: #032429;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+        transition: all 0.3s ease-in-out;
+        border-radius: 3px;
+        background: rgba(122, 184, 147, 0);
+    }
+
+    .inp+label:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: 100%;
+        left: 50%;
+        margin-left: -3px;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 3px solid rgba(122, 184, 147, 0);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .inp:focus,
+    .inp:active {
+        color: #377d6a;
+        text-indent: 0;
+        background: #fff;
+    }
+
+    .inp:focus::-webkit-input-placeholder,
+    .inp:active::-webkit-input-placeholder {
+        color: #aaa;
+    }
+
+    .inp:focus+label,
+    .inp:active+label {
+        color: #fff;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+        background: rgba(122, 184, 147, 1);
+        transform: translateY(-40px);
+    }
+
+    .inp:focus+label:after,
+    .inp:active+label:after {
+        border-top: 4px solid rgba(122, 184, 147, 1);
+    }
+
+    :root {
+        --primary: 0, 0%, 100%;
+        --secondary: 202, 73%, 28%;
+        --c: cubic-bezier(1, .49, .16, .96);
+    }
+
+
+    .btn {
+        --w: 300px;
+        --h: 45px;
+        position: relative;
+        display: flex;
+        width: var(--w);
+        height: var(--h);
+        border: 1px solid white;
+        cursor: pointer;
+        margin: auto;
+    }
+
+    #start,
+    #sybmit {
+        border-bottom: 0px;
+    }
+
+    #reset1,
+    #reset2,
+    #reset3 {
+        border-top: 0px;
+    }
+
+    .btn i {
+        content: '';
+        width: 100%;
+        height: 100%;
+        transition: all .5s var(--c);
+        background: hsl(var(--primary));
+    }
+
+    .btn i:nth-child(1) {
+        transition-delay: .02s;
+    }
+
+    .btn i:nth-child(2) {
+        transition-delay: .04s;
+    }
+
+    .btn i:nth-child(3) {
+        transition-delay: .06s;
+    }
+
+    .btn i:nth-child(4) {
+        transition-delay: .08s;
+    }
+
+    .btn i:nth-child(5) {
+        transition-delay: .10s;
+    }
+
+    .btn i:nth-child(6) {
+        transition-delay: .12s;
+    }
+
+    .btn i:nth-child(7) {
+        transition-delay: .14s;
+    }
+
+    .btn i:nth-child(8) {
+        transition-delay: .16s;
+    }
+
+    .btn i:nth-child(9) {
+        transition-delay: .18s;
+    }
+
+    .btn i:nth-child(10) {
+        transition-delay: .2s;
+    }
+
+    .btn span {
+        position: absolute;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: var(--h);
+        letter-spacing: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        color: hsl(var(--primary));
+        transition: all .4s var(--c);
+        z-index: 100;
+    }
+
+    .btn1,
+    .btn2 {
+        flex-direction: row;
+    }
+
+
+
+    .btn1 i {
+        transform-origin: center bottom;
+    }
+
+    .btn2 i {
+        transform-origin: center top;
+    }
+
+
+    .btn1 i,
+    .btn2 i {
+        transform: scaleY(0);
+    }
+
+
+    .btn1:hover i,
+    .btn2:hover i {
+        transform: scaleY(1);
+    }
+
+    .btn:hover span {
+        color: hsl(var(--secondary));
+        transition-delay: .4s;
+    }
+
+    .info {
+        border: 1px solid white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .totalRun,
+    .ballRemaining {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    .overInfo {
+        margin: 100px 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="bs">
+            <h1>STARTING A MATCH !</h1>
+            <div class="row">
+                <span>
+                    <input class="inp" id="overs" type="text" placeholder="Total Overs" />
+                    <label for="state">OVERS</label>
+                </span>
+                <span>
+                    <input class="inp" id="players" type="text" placeholder="Total Players" />
+                    <label for="planet">PLAYERS</label>
+                </span>
+                <span>
+                    <input class="inp" id="t1n" type="text" placeholder="Team 1 Name" />
+                    <label for="t1n">Team 1</label>
+                </span>
+                <span>
+                    <input class="inp" id="t2n" type="text" placeholder="Team 2 Name" />
+                    <label for="t2n">Team 2</label>
+                </span>
+            </div>
+            <div class="btn btn1" id="start" onclick="start()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <span>Start</span>
+            </div>
+            <div class="btn btn2" id="reset1" onclick="reset1()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <span>Re-set</span>
+            </div>
+        </div>
+        <div class="bg">
+            <div class="info">
+                <div class="col">
+                    <p> 1 - 1 Run</p>
+                    <p> 2 - 2 Run</p>
+                    <p> 3 - 3 Run</p>
+                </div>
+                <div class="col">
+                    <p>0 - Zero</p>
+                    <p>4 - Four</p>
+                    <p>6 - Six</p>
+                </div>
+                <div class="col">
+                    <p>W - White Ball</p>
+                    <p>N - No Ball</p>
+                    <p>O - Out</p>
+                </div>
+            </div><br>
+            <p id="target">-</p>
+            <div class="row">
+                <span>
+                    <input class="inp" id="ball" type="text" placeholder="Insert Run / Ball" /><label
+                        for="ball">Ball</label>
+                </span>
+                <p id="over"></p>
+            </div>
+            <div class="btn btn1" id="submit" onclick="submit()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <span>Submit</span>
+            </div>
+            <div class="btn btn2" id="reset2" onclick="reset2()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <span>Re-set</span>
+            </div>
+            <div class="totalRun">
+
+                <p id="run">00</p>
+                <pre> Runs</pre>
+                <pre> / </pre>
+                <p id="wic">0</p>
+                <pre> Wickets</pre>
+            </div>
+            <div class="ballRemaining">
+                <p id="tOver">00</p>
+                <pre> Overs</pre>
+                <pre> / </pre>
+                <p id="tBall">0</p>
+                <pre> Balls</pre>
+            </div>
+        </div>
+        <div class="end">
+            <h2 id="endh"></h2>
+            <h1 id="win"></h1>
+            <div class="overInfo">
+                <p id="overR"></p>
+                <p id="overB"></p>
+            </div>
+            <div class="btn btn1" id="reset3" onclick="reset3()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <span id="endBtn"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var ball = $("#ball");
+    var run = $("#run");
+    var wic = $("#wic");
+    var over = $("#over");
+    var tover = $("#tOver");
+    var tball = $("#tBall");
+    var endBtn = $("#endBtn");
+    var target = $("#target");
+    var endh = $("#endh");
+    var win = $("#win");
+    var c = 0;
+    var tOvers, tPlayers, t1n, t2n;
+    var ballC = 0, overc = 0, runc = 0, wicc = 0, endc = 0, t1 = 0, t2 = 0;
+    function start() {
+        tOvers = $("#overs").val();
+        tPlayers = $("#players").val();
+        if (tOver == "" || tOvers == 0 || tPlayers == "" | tPlayers == 0) {
+            alert("Complete following fields below !")
+        }
+        else {
+            t1n = $("#t1n").val();
+            t2n = $("#t2n").val();
+            $(".bs").hide("slow");
+            $(".bg").show("slow");
+        }
+    }
+    overtxt = "";
+    function submit() {
+        switch (ball.val()) {
+            case "Z":
+            case "z":
+            case "0":
+                overtxt += "0 - ";
+                ballC++;
+                c++;
+                break;
+            case "1":
+                overtxt += "1 - ";
+                ballC++;
+                c++;
+                runc += 1;
+                break;
+            case "2":
+                overtxt += "2 - ";
+                ballC++;
+                c++;
+                runc += 2;
+                break;
+            case "3":
+                overtxt += "3 - ";
+                ballC++;
+                c++;
+                runc += 3;
+                break;
+            case "4":
+                overtxt += "4 - ";
+                ballC++;
+                c++;
+                runc += 4;
+                break;
+            case "6":
+                overtxt += "6 - ";
+                ballC++;
+                c++;
+                runc += 6;
+                break;
+            case "w":
+            case "W":
+                overtxt += "W - ";
+                runc++;
+                break;
+            case "n":
+            case "N":
+                overtxt += "N - ";
+                runc++;
+                break;
+            case "o":
+            case "O":
+                overtxt += "Out - ";
+                wicc++;
+                ballC++;
+                c++;
+                wic.text(wicc);
+                break;
+        }
+        if (endc == 1 && t1 < runc) {
+            win.text(t2n + " Winner !");
+            endh.text("Match Over");
+            endBtn.text("END");
+            $(".bg").hide("slow");
+            $(".end").show("slow");
+            $("#overR").text(runc + " Runs / " + wicc + " Wickets");
+            $("#overB").text(+overc + " Overs / " + ballC + " Balls");
+        }
+        if (wicc == tPlayers || (overc == tOvers - 1 && c == 6)) {
+            $(".bg").hide("slow");
+            if (endc == 0) {
+                endh.text("1st Inings Over")
+                endBtn.text("Start 2nd Inings");
+                $("#overR").text(runc + " Runs / " + wicc + " Wickets");
+                $("#overB").text(+overc + " Overs / " + ballC + " Balls");
+            }
+            else {
+                win.text(t1n + " Winner !");
+                endh.text("Match Over");
+                endBtn.text("END");
+            }
+
+            $(".end").show("slow");
+        }
+        if (c == 7) {
+            overtxt = ball.val() + " - ";
+            overc++;
+            c = 1;
+        }
+        ball.val("");
+        over.text(overtxt);
+        run.text(runc);
+        tball.text(c);
+        tover.text(overc);
+
+    }
+    function reset1() {
+        $("#overs").val("");
+        $("#players").val("");
+        $("#t2n").val("");
+        $("#t1n").val("");
+        tOvers = 0;
+        tPlayers = 0;
+    }
+    function reset2() {
+        over.text("");
+        run.text("00");
+        wic.text(0);
+        tover.text("00");
+        tball.text(0);
+        ball.val("");
+        overtxt = "";
+        ballC = 0, overc = 0, runc = 0, wicc = 0, c = 0;
+    }
+    function reset3() {
+        t1 = runc;
+        reset2();
+        $(".end").hide("slow");
+        if (endc == 0) {
+            $(".bg").show("slow");
+            target.text("Target = " + (t1 + 1) + ".");
+            endc++;
+        }
+        else {
+            reset1();
+            $(".bs").show("slow");
+            target.text("");
+            t1 = 0;
+        }
+
+    }
+</script>
+
+</html>

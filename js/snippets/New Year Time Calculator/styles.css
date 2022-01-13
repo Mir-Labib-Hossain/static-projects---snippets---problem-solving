@@ -1,0 +1,19 @@
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://66.media.tumblr.com/b51cc9c7a8440296d91f3e4004bd1f4b/tumblr_o9pt5dFsJC1smcbl0o1_540.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.block{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+#show{
+    font-family: 'Cinzel Decorative';
+    font-size: 10vw;
+    color: white;
+}
+sub{
+    font-size:15px ;
+}

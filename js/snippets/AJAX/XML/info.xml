@@ -1,0 +1,37 @@
+<friends>
+    <std>
+        <name>Mir Labib Hossain</name>
+        <id>7</id>
+        <home>Mirpur 12</home>
+    </std>
+    <std>
+        <name>Mir Fayek Hossain</name>
+        <id>6</id>
+        <home>Old Dhaka</home>
+    </std>
+    <std>
+        <name>Ababil Chowdhury</name>
+        <id>2</id>
+        <home>Rangpur</home>
+    </std>
+    <std>
+        <name>Rashed Rayhan Ayon</name>
+        <id>23</id>
+        <home>Kishoregonj</home>
+    </std>
+    <std>
+        <name>Syeda Mim</name>
+        <id>3</id>
+        <home>Monipur</home>
+    </std>
+    <std>
+        <name>Shihab Munna</name>
+        <id>18</id>
+        <home>Bajitpur</home>
+    </std>
+    <std>
+        <name>Nabila Siddique</name>
+        <id>1</id>
+        <home>Feni</home>
+    </std>
+</friends>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<style>
+    tr,
+    th,
+    td {
+        border: 2px solid black;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <button id="b1">Get Data</button>
+    <script>
+        "use strict"
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+        let testobj = {
+            "name": "Rashef Rayhan Ayon",
+            "id": 23,
+            "bff": ["Mir Fayek Hossain", "Tanbir Hassan"],
+            "home": "Kishoregonj",
+            "birthday": "1998/02/14",
+            "fu": function() {
+                return 'This is a Function';
+            },
+            "time": new Date()
+        }
+        let myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": [{
+                "name": "Ford",
+                "models": ["Fiesta", "Focus", "Mustang"]
+            }, {
+                "name": "BMW",
+                "models": ["320", "X3", "X5"]
+            }, {
+                "name": "Fiat",
+                "models": ["500", "Panda"]
+            }]
+        }
+        document.getElementById("b1").onclick = function() {
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    info(this);
+                }
+            }
+            xml.open("GET", "JSON.json", true);
+            xml.send();
+        }
+
+        function info(xml) {
+            var obj = xml.responseText
+            obj = JSON.parse(obj, function(key, value) {
+                if (key == "birthday")
+                    return value = new Date(value);
+                else if (key == "fu")
+                    return value = eval("(" + value + ")");
+                else
+                    return value;
+            });
+        }
+        let ans = "<table><tr>";
+        for (var i in myObj.cars) {
+            ans += "<th>" + myObj.cars[i].name + "</th>";
+        }
+        ans += "</tr>";
+        for (var i in myObj.cars) {
+            p1.innerHTML += "<h1>" + myObj.cars[i].name + "</h1>";
+            for (var j in myObj.cars[i].models) {
+                p1.innerHTML += myObj.cars[i].models[j] + "<br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>
+</style>
+
+<body>
+
+  <!-- <div id="div">
+    <h1 id="p1">Paargraph 1</h1>
+    <h1 id="p2">Paragraph 2</h1>
+    <h1 id="p3">Paragraph 3</h1>
+    <h1 id="p4">Paragraph 4</h1>
+  </div> -->
+  <h1 id="p1"></h1>
+
+  <select id="sel">
+    <option value="Select">Select Background color</option>
+    <option value="Red">Red</option>
+    <option value="Blue">Blue</option>
+  </select>
+  <button id="b1" onclick="fu()">Click</button>
+  <button id="b1" onclick="del()">Delete</button>
+
+  <script>
+    "use strict"
+    var p1 = document.getElementById("p1");
+    //var p2 = document.getElementById("p2");
+    var ans = "";
+    var x = 0;
+    var sel = document.getElementById("sel").value;
+
+    window.onload = function () {
+      if (document.cookie.length != 0) {
+        var v = document.cookie.split("=");
+        document.bgColor = v[1];
+        sel = v[1]
+      }
+    }
+    function del() {
+      sel = "white";
+      document.bgColor = sel;
+      document.cookie = "color=" + sel + ";expires= expires=Sun, 21 jul 3020 07:42:00 UTC";
+    }
+    function fu() {
+      sel = document.getElementById("sel").value;
+      if(sel != "Select"){
+        document.bgColor = sel;
+        document.cookie = "color=" + sel + ";expires=Sun, 21 jul 2030 07:42:00 UTC";
+      }
+    }
+  </script>
+</body>
+
+</html>

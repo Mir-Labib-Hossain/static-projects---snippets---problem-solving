@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id='demo'></p>
+    <script>
+      function findmin(){
+        let i, l = arguments.length, min = Infinity;
+        for(i = 0; i < l; i++)
+        {
+          if(arguments[i]<min)
+            min = arguments[i]
+        }
+        return min;
+      }
+      var x = findmin(1, 2, 3, 4, 5,6 ,7, 3 ,1 , -5)
+      document.getElementById("demo").innerHTML=x;
+      //or view in console
+      console.log(x);
+    </script>
+  </body>
+</html>

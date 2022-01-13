@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing</title>
+    <style>
+        input{
+            width: 100%;
+            height: 100px;
+            background: #FFEF7E;
+            border: solid orange;
+        }
+        #sr{
+            background: tomato;
+        }
+        #sg{
+            background: greenyellow;
+        }
+        span{
+            padding: 10px;
+        }
+        #typeDemo{
+            max-width: 900px;
+            width: 100%;
+            margin:auto
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1" style="color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sed, consequuntur commodi odio placeat culpa sequi fugit maiores aspernatur? Impedit voluptates facere ipsam voluptatibus ducimus dolorem iste accusamus repellendus aliquam?</p>
+    <input id="inp" type="text" onkeypress="return myKeyPress(event)">
+    <p id="p2"></p>
+    <div id="typeDemo" >
+    <img src="https://thegeekpage.com/wp-content/uploads/2015/06/rata-typed.png" alt="">
+</div>
+</body>
+<script>
+    "use strict";
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let inp = document.getElementById("inp");
+    let boo = true;
+    let point = 0;
+    let s = (p1.innerHTML).split("");
+    let counter = 0;
+    function myKeyPress(e) {
+        var keynum;
+        if (window.event) {
+            keynum = e.keyCode;
+        } else if (e.which) {
+            keynum = e.which;
+        }
+        let pressedKey = String.fromCharCode(keynum);
+        if (pressedKey == s[counter]) {
+            p1.style.textShadow = "3px 1px 10px rgba(0, 208, 255, 1)";
+            p2.innerHTML = "Point = "+point;
+            boo = true;
+            point++;
+        }
+        else if (pressedKey != s[counter]) {
+            p1.style.textShadow = "3px 1px 10px tomato";
+            p2.innerHTML ="<span id='sr'>"+pressedKey+"</span> != <span id='sg'>"+s[counter]+"</span> Character No."+counter+" Point = -2";
+            counter--;
+            boo =false;
+            point-=3;
+        }
+        counter++;
+    }
+</script>
+
+</html>

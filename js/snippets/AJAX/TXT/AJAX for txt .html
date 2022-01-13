@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+</head>
+
+<body>
+    <button id="b1">Click</button>
+    <p id="p1"></p>
+    <script>
+        let p1 = document.getElementById("p1");
+        document.getElementById("b1").onclick = function() {
+            let xhr = new XMLHttpRequest();
+            // xhr.onload = function() {
+            xhr.onreadystatechange = function() {
+                console.log(xhr.readyState)
+                if (xhr.status = 200 && xhr.readyState == 4) { //status 	200: "OK"    403:"Forbidden"   404:"Page not found"  readyState 	Holds the status of the XMLHttpRequest.  0: request not initialized 1: server connection established 2: request received 3: processing requt 4: request finished and response is ready
+                    p1.innerHTML += this.getResponseHeader("last-modified") + "<br>";
+                    p1.innerHTML += this.responseText;
+                } else if (this.status == 404) {
+                    p1.innerHTML = "Not Found";
+                }
+            }
+            xhr.open("GET", "example.txt", true);
+            xhr.send()
+        };
+    </script>
+</body>
+
+</html>

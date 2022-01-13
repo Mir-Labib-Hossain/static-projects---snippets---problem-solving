@@ -1,0 +1,26 @@
+{
+    "Labib": {
+        "fullName": "Mir Labib hossain",
+        "id": 7,
+        "home": "Mirpur 12 21/10",
+        "bff": ["Ababil Chowdhury", "Nabila Siddique", "Syeda Mim"],
+        "birthday": "1999-7-6",
+        "fu": "function(){return 'This is a Function';}",
+        "time": "new Date()",
+        "parent": {
+            "pname": "Bibi Ayesha Khushi"
+        }
+    },
+    "Fayek": {
+        "fullName": "Mir Fayek Hossain",
+        "id": 6,
+        "home": "Old Dhaka",
+        "bff": ["Jannatul Firdous Sithy", "Rashed Rayhan Ayon"],
+        "birthday": "1999/7/6",
+        "fu": "function(){return 'This is a Function';}",
+        "time": "new Date()",
+        "parent": {
+            "pname": "Mir Layek Hossain"
+        }
+    }
+}

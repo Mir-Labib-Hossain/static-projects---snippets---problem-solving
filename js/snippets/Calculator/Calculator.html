@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-inner">
+            <p id="input"></p>
+        </div>
+    </div>
+    <br>
+    <div class="btn-collection">
+        <div>
+           <button id="b1" class="big-button" onclick="inputF('(')">(</button> <!--inputF = Input Function--> 
+            <button id="b2 " class="big-button " onclick="inputF(')')">)</button>
+            <button id="reminder " class="big-button " onclick="inputF('%')">%</button>
+            <button id="ac " class="big-button " onclick="inputF('ac')">AC</button>
+            <br>
+            <button id="7 " class="big-button " onclick="inputF(7)">7</button>
+            <button id="8 " class="big-button " onclick="inputF(8)">8</button>
+            <button id="9 " class="big-button " onclick="inputF(9)">9</button>
+            <button id="div " class="big-button " onclick="inputF('÷')">÷</button>
+            <br>
+            <button id="4 " class="big-button " onclick="inputF(4)">4</button>
+            <button id="5 " class="big-button " onclick="inputF(5)">5</button>
+            <button id="6 " class="big-button " onclick="inputF(6)">6</button>
+            <button id="mul " class="big-button " onclick="inputF('×')">×</button>
+            <br>
+            <button id="1 " class="big-button " onclick="inputF(1)">1</button>
+            <button id="2 " class="big-button " onclick="inputF(2)">2</button>
+            <button id="3 " class="big-button " onclick="inputF(3)">3</button>
+            <button id="minus " class="big-button " onclick="inputF('-')">-</button>
+            <br>
+            <button id="0 " class="big-button " onclick="inputF(0)">0</button>
+            <button id="dot " class="big-button " onclick="inputF('.')">.</button>
+            <button id="plus " class="big-button " onclick="inputF('+')">+</button>
+            <button id="equal " class="big-button " onclick="inputF('=')">=</button>
+        </div>
+    </div>
+    <script src="myscripts.js"></script>
+</body>
+
+</html>

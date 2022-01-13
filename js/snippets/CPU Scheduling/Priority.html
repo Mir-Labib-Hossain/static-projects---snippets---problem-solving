@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import "compass/css3";
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        color: #fff;
+        background: #efefef;
+    }
+
+    .row {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 30px 30px;
+        background: #032429;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        height: 97vh;
+
+    }
+
+    .row:before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 0;
+        left: -5000px;
+        width: 15000px;
+        z-index: -1;
+        background: inherit;
+    }
+
+    .row:first-child {
+        padding: 40px 30px;
+    }
+
+    .row:nth-child(2),
+    .row:nth-child(8),
+    .row:nth-child(10) {
+        background: #134a46;
+    }
+
+    .row:nth-child(3),
+    .row:nth-child(7) {
+        background: #377d6a;
+    }
+
+    .row:nth-child(4),
+    .row:nth-child(6) {
+        background: #7ab893;
+    }
+
+    .row:nth-child(5) {
+        background: #b2e3af;
+    }
+
+    .row span {
+        position: relative;
+        display: inline-block;
+        margin: 30px 10px;
+    }
+
+    .swing {
+        display: inline-block;
+        width: 215px;
+        padding: 10px 0 10px 15px;
+        font-family: "Open Sans", sans;
+        font-weight: 400;
+        color: #377d6a;
+        background: #efefef;
+        border: 0;
+        border-radius: 3px;
+        outline: 0;
+        text-indent: 60px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .swing::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 0;
+        font-weight: 300;
+    }
+
+    .swing+label {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 15px;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+        background: #7ab893;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        transform-origin: 2px 2px;
+        transform: rotate(0);
+        animation: swing-back 0.4s 1 ease-in-out;
+    }
+    label{
+        box-shadow: 2px 5px 18px  #377d6a;
+         }
+    @keyframes swing {
+        0% {
+            transform: rotate(0);
+        }
+
+        20% {
+            transform: rotate(116deg);
+        }
+
+        40% {
+            transform: rotate(60deg);
+        }
+
+        60% {
+            transform: rotate(98deg);
+        }
+
+        80% {
+            transform: rotate(76deg);
+        }
+
+        100% {
+            transform: rotate(82deg);
+        }
+    }
+
+    @keyframes swing-back {
+        0% {
+            transform: rotate(82deg);
+        }
+
+        100% {
+            transform: rotate(0);
+        }
+    }
+
+    .swing:focus,
+    .swing:active {
+        color: #377d6a;
+        text-indent: 0;
+        background: #fff;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .swing:focus::-webkit-input-placeholder,
+    .swing:active::-webkit-input-placeholder {
+        color: #aaa;
+    }
+
+    .swing:focus+label,
+    .swing:active+label {
+        animation: swing 1.4s 1 ease-in-out;
+        transform: rotate(82deg);
+    }
+     th{
+       border-bottom: 2px solid #377d6a;
+    }
+    td{
+       border-bottom: 2px solid #b2e3af;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: #7ab893;
+  --bg-color: #141218;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+button {
+  position:relative;
+  padding: 10px 20px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px; 
+  z-index: 0;  
+  overflow: hidden;   
+}
+
+button:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after, button::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
+}
+
+button::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: var(--bg-color);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+}
+
+button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+
+button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles */
+button::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+</style>
+
+ <body>
+    <div class="row">
+        <span><input class="swing" id="p" placeholder="No. of Process" /><label for="p">Process</label></span>
+        <span><input class="swing" id="at" placeholder="for each Process" /><label for="at">Arrival Time</label></span>
+        <span><input class="swing" id="et" placeholder="for each Process" /><label for="et">Execute Time</label></span><br>
+        <span>
+            <button  id="b" onclick="fu()" style="--content: 'SUBMIT';">
+                <div class="left"></div>
+                  SUBMIT
+                <div class="right"></div>
+              </button>
+            </span>
+        <p1 id="p1"></p1>
+    </div>
+    
+    <script>
+        "use strict"
+        function fu() {
+            let p1 = document.getElementById("p1");
+            let ans, i, j, temp, st = [], p = [], stTemp = 0, avg = 0;
+            let pn = document.getElementById("p").value;
+            let at = (document.getElementById("at").value).split(",");
+            let et = (document.getElementById("et").value).split(",");
+            let table = "<table style='width:100%'><tr><th>Process No.</th><th>Arrival Time</th> <th>Execute Time</th><th>Service Time</th></tr>";
+            for (i = 0; i < pn; i++) {
+                p[i] = "P" + i;
+            }
+            for (i = 0; i < pn; i++) {
+                for (j = 0; j < pn; j++) {
+                    if (i != j && at[i] < at[j]) {
+                        temp = at[i];
+                        at[i] = at[j];
+                        at[j] = temp;
+
+                        temp = et[i];
+                        et[i] = et[j];
+                        et[j] = temp;
+
+                        temp = p[i];
+                        p[i] = p[j];
+                        p[j] = temp;
+                    }
+                }
+            }
+            for (i = 0; i < pn; i++) {
+                st[i] = stTemp;
+                if (et[i - 1] == undefined)
+                    stTemp = 0;
+                else
+                    stTemp = parseInt(st[i]) + parseInt(et[i - 1]);
+                console.log(stTemp + " = " + st[i] + " + " + et[i - 1]);
+                st[i] = stTemp;
+                avg += st[i] - at[i];
+                table += "<tr><td>"+p[i] + "</td><td>" + at[i] + "</td><td>" + et[i] + "</td><td>" + st[i]+"</td></tr>";
+            }
+            table+="</table>";
+            console.log(p);
+            console.log(at);
+            console.log(et);
+            p1.innerHTML = table+"<br>Average Time : "+ avg / pn;
+        }
+    </script>
+</body>
+
+</html>

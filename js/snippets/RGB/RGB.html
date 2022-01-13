@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <title>RGB Color Generator</title>
+</head>
+
+<body>
+    <div onmousemove="getColor()">
+        <input type="range" min="1" max="255" class="slider" id="myRange1">
+        <p>Red : <span id="demo1"></span></p>
+    </div>
+    <div onmousemove="getColor()">
+        <input type="range" min="1" max="255" class="slider" id="myRange2">
+        <p>Green : <span id="demo2"></span></p>
+    </div>
+    <div onmousemove="getColor()">
+        <input type="range" min="1" max="255" class="slider" id="myRange3">
+        <p>Blue : <span id="demo3"></span></p>
+    </div>
+    <p id="color"></p>
+
+    <script src="myscripts.js"></script>
+
+</body>
+
+</html>
+
+</html>

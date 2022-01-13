@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage</title>
+  <style>
+    * {
+      color: black;
+    }
+
+    div {
+      height: 40vh;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <input id="ip" type="text" value="" placeholder="Enter a color">
+  <button onclick="fu()">Submit</button>
+  <p id="p1"></p>
+  <div id="d"></div>
+</body>
+<script>
+  let p1 = document.getElementById("p1");
+  let d = document.getElementById("d");
+  let ls = localStorage;
+  function fu() {
+    var ip = document.getElementById("ip").value;
+    ls.setItem("bg",ip);
+    d.style.backgroundColor = ls.getItem("bg");
+    p1.innerHTML = "Last Entered color was : " + ls.getItem("bg").toUpperCase();
+  }
+  d.style.backgroundColor = ls.getItem("bg");
+  p1.innerHTML = "Last Entered color was : " + ls.getItem("bg").toUpperCase();
+
+</script>
+
+</html>
