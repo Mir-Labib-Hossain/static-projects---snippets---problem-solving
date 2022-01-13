@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@mixin parallex($path) {
+  background-image: url($path);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-family: "Kaushan Script";
+  font-size: 5em;
+}
+.container {
+  @include parallex("https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzdCUyMGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+  display: grid;
+  place-content: center;
+  color: white;
+  p {
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    text-align: center;
+  }
+}
+.desc{
+    height: 100vh;
+}
