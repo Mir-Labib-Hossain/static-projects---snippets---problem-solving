@@ -1,4 +1,0 @@
-this line contains Python only
-this line doesnt any
-here Bash and Python is available
-this line contain Bash only
