@@ -1,0 +1,9 @@
+ID   Name   Price
+01.   Pen   Tk. 10
+02.   Pencil   Tk. 2000000000
+03.   Ruler   Tk. 30
+04.   Color Pencil   Tk. 100
+05.   Tiffin Box   Tk. 1250
+06.   Rubber   Tk. 200000
+07.   Rezzer   Tk. 2000
+0123456789

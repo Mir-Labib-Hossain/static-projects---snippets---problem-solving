@@ -1,0 +1,3 @@
+cd /mnt/
+ls
+cd g/CODES/Python/Problems
